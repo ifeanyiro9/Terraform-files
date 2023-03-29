@@ -5,7 +5,7 @@ terraform {
       version = "~> 4.0"
     }
   }
-}clear
+}
 
 resource "aws_instance" "jenkins" {
   ami                         = var.ami
