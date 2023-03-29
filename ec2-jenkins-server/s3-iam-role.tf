@@ -18,3 +18,11 @@ resource "aws_iam_role_policy_attachment" "s3-jenkins-s3-access" {
   policy_arn = var.policy_arn
   role       = aws_iam_role.s3-jenkins-role.name
 }
+
+resource "aws_iam_instance_profile" "s3-jenkins-profile" {
+  name = "s3-jenkins_profile"
+
+  roles = [
+    aws_iam_role.s3-jenkins-role.name
+  ]
+}

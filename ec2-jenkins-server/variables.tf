@@ -28,9 +28,6 @@ variable "jenkins-tag-name" {
    type    = string
 }
 
-
-
-
 variable "bucket" {
     default = "jenkins-s3-bucket-ifeanyi-luit20"
     type    = string
