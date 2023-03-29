@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 variable "ami" {
-   default = "ami-00c39f71452c08778"
+   default = "ami-04581fbf744a7d11f"
    type    = string
 }
 
