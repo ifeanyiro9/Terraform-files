@@ -25,12 +25,14 @@ resource "aws_instance" "jenkins" {
 
 resource "aws_s3_bucket" "jenkins-s3-bucket" {
   bucket = var.bucket
-  acl    = var.acl
   
   tags   = {
     Name = var.jenkins-tag-name
   }
 }
 
-
+resource "aws_s3_bucket_acl" "jenkins-s3-acl" {
+  bucket = aws_s3_bucket.jenkins-s3-bucket.id
+  acl    = var.acl
+}
 
