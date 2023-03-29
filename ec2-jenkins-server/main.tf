@@ -17,7 +17,7 @@ resource "aws_instance" "jenkins" {
   iam_instance_profile        = "${ws_iam_role.s3-jenkins-role.name}"
   
   tags   = {
-    Name = "Jenkins-Server"
+    Name = var.jenkins-tag-name
   }
   
   
@@ -26,8 +26,9 @@ resource "aws_instance" "jenkins" {
 resource "aws_s3_bucket" "jenkins-s3-bucket" {
   bucket = var.bucket
   acl    = var.acl
+  
   tags   = {
-    Name = "Jenkins-Server"
+    Name = var.jenkins-tag-name
   }
 }
 

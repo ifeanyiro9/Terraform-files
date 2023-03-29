@@ -23,6 +23,14 @@ variable "associate_public_ip_address" {
    type    = bool
 }
 
+variable "jenkins-tag-name" {
+   default = "Jenkins-Server"
+   type    = string
+}
+
+
+
+
 variable "bucket" {
     default = "jenkins-s3-bucket-ifeanyi-luit20"
     type    = string

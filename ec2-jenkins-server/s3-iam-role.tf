@@ -15,6 +15,6 @@ resource "aws_iam_role" "s3-jenkins-role" {
 }
 
 resource "aws_iam_role_policy_attachment" "s3-jenkins-s3-access" {
-  policy_arn = 
+  policy_arn = var.policy_arn
   role       = aws_iam_role.s3-jenkins-role.name
 }
