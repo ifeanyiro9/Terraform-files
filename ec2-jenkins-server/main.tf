@@ -14,7 +14,7 @@ resource "aws_instance" "jenkins" {
   associate_public_ip_address = var.associate_public_ip_address
   vpc_security_group_ids      = [aws_security_group.jenkins-sg.id]
   user_data                   = "${file("install_jenkins.sh")}"
-  iam_instance_profile        = "${ws_iam_role.s3-jenkins-role.name}"
+  iam_instance_profile        = "${aws_iam_role.s3-jenkins-role.name}"
   
   tags   = {
     Name = var.jenkins-tag-name

@@ -1,7 +1,7 @@
 #Jenkins Security Group Resource
 resource "aws_security_group" "jenkins-sg" {
     name = "jenkins-sg"
-    decription = "Allow Port 22 and 8080"
+    description = "Allow Port 22 and 8080"
     
     ingress {
         description      = "Allow SSH Traffic"
