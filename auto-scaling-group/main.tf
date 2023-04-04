@@ -3,18 +3,18 @@ resource "aws_vpc" "terraform-vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = var.resource_tag
+    Name = var.vpc_name
   }
 }
 
 resource "aws_subnet" "pub-sub1" {
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = var.availability_zone-2
+  availability_zone       = var.availability_zone-1
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.resource_tag
+    Name = var.pub-sub1-name
   }
 }
 
@@ -25,7 +25,7 @@ resource "aws_subnet" "pub-sub2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.resource_tag
+    Name = var.pub-sub2-name
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_subnet" "priv-sub1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.resource_tag
+    Name = var.priv-sub1-name
   }
 }
 
@@ -48,7 +48,7 @@ resource "aws_subnet" "priv-sub2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.resource_tag
+    Name = var.priv-sub2-name
   }
 }
 
@@ -57,7 +57,7 @@ resource "aws_internet_gateway" "terraform-igw" {
   vpc_id = aws_vpc.terraform-vpc.id
 
   tags = {
-    Name = "var.resource_tag"
+    Name = var.igw-name
   }
 }
 
@@ -71,7 +71,7 @@ resource "aws_nat_gateway" "terraform-ngw" {
   subnet_id     = aws_subnet.pub-sub1.id
 
   tags = {
-    Name = var.resource_tag
+    Name = var.nat-gw-name
   }
 
   depends_on = [aws_internet_gateway.terraform-igw]
@@ -87,7 +87,7 @@ resource "aws_route_table" "pub-rt" {
   }
 
   tags = {
-    Name = "var.resource_tag"
+    Name = var.pub-rt-name
   }
 }
 
@@ -101,7 +101,7 @@ resource "aws_route_table" "priv-rt" {
   }
 
   tags = {
-    Name = "var.resource_tag"
+    Name = var.priv-rt-name
   }
 }
 
