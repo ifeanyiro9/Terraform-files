@@ -17,7 +17,7 @@ resource "aws_lb_target_group" "alb-tg" {
 
   health_check {
     interval = 60
-    path     = "/var/www/html/index.html"
+    path     = "/"
     port     = 80
     timeout  = 45
     protocol = "HTTP"
