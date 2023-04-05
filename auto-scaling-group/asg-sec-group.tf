@@ -10,6 +10,7 @@ resource "aws_security_group" "lt-sg" {
     to_port         = 80
     protocol        = "tcp"
     security_groups = [aws_security_group.alb-sg.id]
+    cidr_blocks     = ["0.0.0.0/0"]
   }
 
   # SSH access from anywhere
@@ -18,6 +19,7 @@ resource "aws_security_group" "lt-sg" {
     to_port         = 22
     protocol        = "tcp"
     security_groups = [aws_security_group.alb-sg.id]
+    cidr_blocks     = ["0.0.0.0/0"]
   }
   # Outbound Rules
   # Internet access to anywhere
@@ -26,4 +28,5 @@ resource "aws_security_group" "lt-sg" {
     to_port         = 0
     protocol        = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+    }
 }
