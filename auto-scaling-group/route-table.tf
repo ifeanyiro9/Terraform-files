@@ -26,7 +26,6 @@ resource "aws_route_table" "priv-rt" {
 }
 
 
-
 resource "aws_route_table_association" "pub-sub1-rt-ass" {
   subnet_id      = aws_subnet.pub-sub1.id
   route_table_id = aws_route_table.pub-rt.id

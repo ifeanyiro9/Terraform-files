@@ -7,7 +7,6 @@ resource "aws_internet_gateway" "terraform-igw" {
   }
 }
 
-
 resource "aws_eip" "ngw-eip" {
   vpc = true
 }
