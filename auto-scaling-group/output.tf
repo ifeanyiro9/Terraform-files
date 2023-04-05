@@ -22,3 +22,7 @@ output "priv-sub2-id" {
 output "terraform-igw" {
   value = aws_internet_gateway.terraform-igw.id
 }
+
+output "alb-dns" {
+  value = -aws_lb.pub-sub-alb.dns_name
+}

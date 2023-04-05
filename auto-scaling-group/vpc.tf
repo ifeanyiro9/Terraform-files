@@ -1,5 +1,5 @@
 resource "aws_vpc" "terraform-vpc" {
-  cidr_block       = "10.0.0.0/16"
+  cidr_block       = var.vpc-cidr
   instance_tenancy = "default"
 
   tags = {

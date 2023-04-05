@@ -27,7 +27,7 @@ resource "aws_lb_target_group" "alb-tg" {
 
 
 # Create ALB listener
-resource "aws_lb_listener" "abl-listener" {
+resource "aws_lb_listener" "alb-listener" {
   load_balancer_arn = aws_lb.pub-sub-alb.arn
   port              = "80"
   protocol          = "HTTP"
