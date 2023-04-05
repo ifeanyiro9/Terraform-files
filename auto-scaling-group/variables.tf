@@ -62,3 +62,8 @@ variable "priv-rt-name" {
   default = "Private Route Table"
   type    = string
 }
+
+variable "vpc-cidr" {
+  default = "10.0.0.0/16"
+  type    = string
+}
