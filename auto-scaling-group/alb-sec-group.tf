@@ -3,7 +3,7 @@ resource "aws_security_group" "alb-sg" {
   name        = "alb-sg"
   description = "Security Group for the App Load Balancer"
   vpc_id      = aws_vpc.terraform-vpc.id
-  depends_on = [aws_vpc.terraform-vpc]
+  depends_on  = [aws_vpc.terraform-vpc]
 
   ingress {
     description = "Allow HTTP Traffic"

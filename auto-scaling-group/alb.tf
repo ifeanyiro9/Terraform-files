@@ -38,5 +38,8 @@ resource "aws_lb_listener" "alb-listener" {
 }
 
 
-
-
+resource "aws_lb_target_group_attachment" "tg-attach" {
+  target_group_arn = aws_lb_target_group.alb-tg.arn
+  target_id        = aws_autoscaling_group.asg.id
+  port             = 80
+}

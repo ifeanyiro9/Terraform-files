@@ -24,5 +24,5 @@ output "terraform-igw" {
 }
 
 output "alb-dns" {
-  value = -aws_lb.pub-sub-alb.dns_name
+  value = aws_lb.pub-sub-alb.dns_name
 }
