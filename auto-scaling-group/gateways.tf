@@ -14,7 +14,7 @@ resource "aws_eip" "ngw-eip" {
 
 # Create a NAT gateway and associate it with an Elastic IP and a public subnet
 resource "aws_nat_gateway" "terraform-ngw" {
-  allocation_id = aws_eip.ngw-eip.id # Associate the NAT gateway with the Elastic IP
+  allocation_id = aws_eip.ngw-eip.id     # Associate the NAT gateway with the Elastic IP
   subnet_id     = aws_subnet.pub-sub1.id # Associate the NAT gateway with a public subnet
 
   tags = {

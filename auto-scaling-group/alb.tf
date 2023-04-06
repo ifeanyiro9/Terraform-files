@@ -33,7 +33,7 @@ resource "aws_lb_listener" "alb-listener" {
   load_balancer_arn = aws_lb.pub-sub-alb.arn
   port              = "80"
   protocol          = "HTTP"
-  
+
   # Set the default action for the listener
   default_action {
     type             = "forward"

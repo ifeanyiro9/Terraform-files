@@ -8,7 +8,7 @@ resource "aws_autoscaling_group" "asg" {
   launch_template {
     id = aws_launch_template.lt-asg.id
   }
-  
+
   # Tag the autoscaling group for easier identification
   tag {
     key                 = "Name"

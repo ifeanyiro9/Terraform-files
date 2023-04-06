@@ -1,7 +1,7 @@
 # Creates a public route table with a default route to the internet gateway
 resource "aws_route_table" "pub-rt" {
   vpc_id = aws_vpc.terraform-vpc.id
-  
+
   # Create a default route for the internet gateway with destination 0.0.0.0/0
   route {
     cidr_block = var.pub_rt_cidr
@@ -43,16 +43,16 @@ resource "aws_route_table_association" "pub-sub2-rt-ass" {
 resource "aws_route_table_association" "priv-sub1-rt-ass" {
   subnet_id      = aws_subnet.priv-sub1.id
   route_table_id = aws_route_table.priv-rt.id
-  
+
   # Wait for the private route table to be created before creating this association
-  depends_on     = [aws_route_table.priv-rt]
+  depends_on = [aws_route_table.priv-rt]
 }
 
 # Associates the private route table with the private subnet 2
 resource "aws_route_table_association" "priv-sub2-rt-ass" {
   subnet_id      = aws_subnet.priv-sub2.id
   route_table_id = aws_route_table.priv-rt.id
-  
+
   # Wait for the private route table to be created before creating this association
-  depends_on     = [aws_route_table.priv-rt]
+  depends_on = [aws_route_table.priv-rt]
 }

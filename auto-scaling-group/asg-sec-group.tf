@@ -19,7 +19,7 @@ resource "aws_security_group" "lt-sg" {
     protocol        = "tcp"
     security_groups = [aws_security_group.alb-sg.id]
   }
-  
+
   # Outbound Rules
   # Internet access to anywhere
   egress {

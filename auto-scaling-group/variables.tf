@@ -105,15 +105,15 @@ variable "alb_sg_egress_cidr_blocks" {
 }
 
 variable "load_balancer_name" {
-  type = string
+  type        = string
   description = "Name of the load balancer"
-  default = "pub-sub-alb"
+  default     = "pub-sub-alb"
 }
 
 variable "target_group_name" {
-  type = string
+  type        = string
   description = "Name of the target group"
-  default = "alb-tg"
+  default     = "alb-tg"
 }
 
 variable "lt_sg_name" {
