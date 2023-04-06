@@ -4,7 +4,7 @@ resource "aws_route_table" "pub-rt" {
   
   # Create a default route for the internet gateway with destination 0.0.0.0/0
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.pub_rt_cidr
     gateway_id = aws_internet_gateway.terraform-igw.id
   }
 
@@ -18,7 +18,7 @@ resource "aws_route_table" "priv-rt" {
   vpc_id = aws_vpc.terraform-vpc.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.priv_rt_cidr
     gateway_id = aws_nat_gateway.terraform-ngw.id
   }
 
