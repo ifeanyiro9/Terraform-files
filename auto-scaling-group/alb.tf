@@ -11,7 +11,7 @@ resource "aws_lb" "pub-sub-alb" {
 
 # Create a target group for the load balancer
 resource "aws_lb_target_group" "alb-tg" {
-  name     = "var.target_group_name"
+  name     = var.target_group_name
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.terraform-vpc.id
