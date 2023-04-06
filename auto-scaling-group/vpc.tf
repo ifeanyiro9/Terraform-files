@@ -1,3 +1,4 @@
+# Create an AWS VPC
 resource "aws_vpc" "terraform-vpc" {
   cidr_block       = var.vpc-cidr
   instance_tenancy = "default"
@@ -7,6 +8,7 @@ resource "aws_vpc" "terraform-vpc" {
   }
 }
 
+# Create first public subnet in the VPC
 resource "aws_subnet" "pub-sub1" {
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.1.0/24"
@@ -18,6 +20,7 @@ resource "aws_subnet" "pub-sub1" {
   }
 }
 
+# Create second public subnet in the VPC
 resource "aws_subnet" "pub-sub2" {
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.2.0/24"
@@ -29,7 +32,7 @@ resource "aws_subnet" "pub-sub2" {
   }
 }
 
-
+# Create first private subnet in the VPC
 resource "aws_subnet" "priv-sub1" {
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.3.0/24"
@@ -41,6 +44,7 @@ resource "aws_subnet" "priv-sub1" {
   }
 }
 
+# Create second private subnet in the VPC
 resource "aws_subnet" "priv-sub2" {
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.4.0/24"
