@@ -1,11 +1,11 @@
 # Creates a public route table with a default route to the internet gateway
 resource "aws_route_table" "pub-rt" {
-  vpc_id = aws_vpc.terraform-vpc.id
+  vpc_id = aws_vpc.two-tier-vpc.id
 
   # Create a default route for the internet gateway with destination 0.0.0.0/0
   route {
     cidr_block = var.pub_rt_cidr
-    gateway_id = aws_internet_gateway.terraform-igw.id
+    gateway_id = aws_internet_gateway.two-tier-igw.id
   }
 
   tags = {
@@ -15,11 +15,11 @@ resource "aws_route_table" "pub-rt" {
 
 # Creates a private route table with a default route to the NAT gateway
 resource "aws_route_table" "priv-rt" {
-  vpc_id = aws_vpc.terraform-vpc.id
+  vpc_id = aws_vpc.two-tier-vpc.id
 
   route {
     cidr_block = var.priv_rt_cidr
-    gateway_id = aws_nat_gateway.terraform-ngw.id
+    gateway_id = aws_nat_gateway.two-tier-ngw.id
   }
 
   tags = {

@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 variable "vpc_name" {
-  default = "Terraform VPC"
+  default = "Two Tier VPC"
   type    = string
 }
 
@@ -29,7 +29,7 @@ variable "pub-sub1-name" {
 }
 
 variable "pub-sub2-name" {
-  default = "Public Subnet 1"
+  default = "Public Subnet 2"
   type    = string
 }
 
@@ -39,7 +39,7 @@ variable "priv-sub1-name" {
 }
 
 variable "priv-sub2-name" {
-  default = "Private Subnet 1"
+  default = "Private Subnet 2"
   type    = string
 }
 
@@ -74,11 +74,6 @@ variable "alb_sg_name" {
   default     = "alb-sg"
 }
 
-variable "alb_sg_description" {
-  type        = string
-  description = "Description of the App Load Balancer security group"
-  default     = "Security Group for the App Load Balancer"
-}
 
 variable "http_port" {
   type        = number
@@ -193,6 +188,7 @@ variable "priv_rt_cidr" {
 variable "pub_sub1_cidr" {
   default = "10.0.1.0/24"
   type    = string
+  
 }
 
 variable "pub_sub2_cidr" {

@@ -1,6 +1,6 @@
 # Create an internet gateway and associate it with the VPC
-resource "aws_internet_gateway" "terraform-igw" {
-  vpc_id = aws_vpc.terraform-vpc.id
+resource "aws_internet_gateway" "two-tier-igw" {
+  vpc_id = aws_vpc.two-tier-vpc.id
 
   tags = {
     Name = var.igw-name
@@ -13,7 +13,7 @@ resource "aws_eip" "ngw-eip" {
 }
 
 # Create a NAT gateway and associate it with an Elastic IP and a public subnet
-resource "aws_nat_gateway" "terraform-ngw" {
+resource "aws_nat_gateway" "two-tier-ngw" {
   allocation_id = aws_eip.ngw-eip.id     # Associate the NAT gateway with the Elastic IP
   subnet_id     = aws_subnet.pub-sub1.id # Associate the NAT gateway with a public subnet
 
@@ -21,5 +21,5 @@ resource "aws_nat_gateway" "terraform-ngw" {
     Name = var.nat-gw-name
   }
 
-  depends_on = [aws_internet_gateway.terraform-igw] # Make sure the internet gateway is created before creating the NAT gateway
+  depends_on = [aws_internet_gateway.two-tier-igw] # Make sure the internet gateway is created before creating the NAT gateway
 }
