@@ -30,5 +30,5 @@ resource "aws_launch_template" "lt_asg" {
 # Attach the autoscaling group to the target group of the ALB
 resource "aws_autoscaling_attachment" "asg_tg_attach" {
   autoscaling_group_name = aws_autoscaling_group.asg.id
-  lb_target_group_arn    = aws_lb_target_group.alb_tg.arn
+  lb_target_group_arn    = var.alb_tg_arn
 }

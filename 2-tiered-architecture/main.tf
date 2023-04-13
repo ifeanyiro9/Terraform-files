@@ -8,6 +8,7 @@ module "auto_scaling_group" {
   lt_asg_key = "levelupkeypair"
   script_name = "install-apache.sh"
   asg_sg_id = module.network_flow.asg_sg_id
+  alb_tg_arn = module.network_flow.alb_tg_arn
 }
 
 #Load Balancer Module

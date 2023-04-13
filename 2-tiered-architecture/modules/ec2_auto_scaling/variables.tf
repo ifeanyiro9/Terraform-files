@@ -60,3 +60,5 @@ variable "script_name" {
   description = "User Data Script"
   default     = "install-apache.sh"
 }
+
+variable "alb_tg_arn" {}
