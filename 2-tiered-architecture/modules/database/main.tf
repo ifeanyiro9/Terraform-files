@@ -1,7 +1,7 @@
 # Database subnet group
 resource "aws_db_subnet_group" "db_subnet" {
   name       = var.db_sub_name
-  subnet_ids = [var.pub_sub1_id, var.pub_sub2_id]
+  subnet_ids = [var.priv_sub1_id, var.priv_sub2_id]
 }
 
 
@@ -25,4 +25,6 @@ resource "aws_db_instance" "db_instance" {
   maintenance_window          = var.maintenance_window
   multi_az                    = var.multi_az
   skip_final_snapshot         = var.skip_final_snapshot
+  
+  depends_on = [aws_db_subnet_group.db_subnet]
 }

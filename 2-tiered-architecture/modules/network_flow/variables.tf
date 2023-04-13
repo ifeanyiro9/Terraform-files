@@ -11,6 +11,11 @@ variable "vpc_instance_tenancy" {
   type    = string
 }
 
+variable "enable_dns_hostnames" {
+  default = true
+  type    = bool
+}
+
 variable "vpc_name" {
   default = "Two Tier VPC"
   type    = string
@@ -68,12 +73,12 @@ variable "priv_sub2_name" {
 #Availability Zone Variables
 #####################################
 variable "az_1" {
-  default = "us_east_1a"
+  default = "us-east-1a"
   type    = string
 }
 
 variable "az_2" {
-  default = "us_east_1b"
+  default = "us-east-1b"
   type    = string
 }
 

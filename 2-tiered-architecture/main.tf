@@ -39,8 +39,8 @@ module "network_flow" {
   priv_sub1_cidr = "10.0.3.0/24"
   priv_sub2_cidr = "10.0.4.0/24"
   map_public_ip  = true
-  az_1           = "us_east_1a"
-  az_2           = "us_east_1b"
+  az_1           = "us-east-1a"
+  az_2           = "us-east-1b"
   pub_rt_cidr    = "0.0.0.0/0"
   priv_rt_cidr   = "0.0.0.0/0"
 }
@@ -49,8 +49,8 @@ module "network_flow" {
 #Data Module
 module "database" {
   source                      = "./modules/database"
-  pub_sub1_id                 = module.network_flow.pub_sub1_id
-  pub_sub2_id                 = module.network_flow.pub_sub2_id
+  priv_sub1_id                 = module.network_flow.priv_sub1_id
+  priv_sub2_id                 = module.network_flow.priv_sub2_id
   allocated_storage           = 5
   storage_type                = "gp2"
   engine                      = "mysql"

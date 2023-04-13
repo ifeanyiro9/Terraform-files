@@ -9,8 +9,8 @@ variable "db_sub_name" {
   type    = string
 }
 
-variable "pub_sub1_id" {}
-variable "pub_sub2_id" {}
+variable "priv_sub1_id" {}
+variable "priv_sub2_id" {}
 
 #Database
 #####################################
