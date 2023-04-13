@@ -2,7 +2,7 @@
 #Auto Scaling Group Variables
 #####################################
 variable "asg_name" {
-  default = "Two tier asg"
+  default = "two tier asg"
   type    = string
 }
 
@@ -26,13 +26,13 @@ variable "pub_sub1_id" {}
 variable "pub_sub2_id" {}
 
 variable "asg_tag_name" {
-  default = "Two Tier ASG"
+  default = "two Tier ASG"
   type    = string
 }
 
 #Launch Template
 variable "lt_asg_name" {
-  default = "Two tier lt_asg"
+  default = "two-tier-lt-asg"
   type    = string
 }
 

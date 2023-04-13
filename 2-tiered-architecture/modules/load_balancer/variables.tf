@@ -2,7 +2,7 @@
 #Load Balancer Variables
 #####################################
 variable "pub_sub_alb_name" {
-  default = "Two tier public subnet"
+  default = "two-tier-public-subnet-alb"
   type    = string
 }
 
@@ -12,13 +12,13 @@ variable "pub_sub2_id" {}
 variable "alb_sg_id" {}
 
 variable "pub_sub_alb_tag" {
-  default = "Two Tier Public Subnet ALB"
+  default = "two Tier Public Subnet ALB"
   type    = string
 }
 
 #Target Group
 variable "target_group_name" {
-  default = "Two Tier Target Group"
+  default = "two-tier-target-group"
   type    = string
 }
 

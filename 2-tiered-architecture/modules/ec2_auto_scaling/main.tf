@@ -23,8 +23,8 @@ resource "aws_launch_template" "lt_asg" {
   image_id               = var.lt_asg_ami
   instance_type          = var.lt_asg_instance_type
   key_name               = var.lt_asg_key
-  vpc_security_group_ids = var.asg_sg_id
-  user_data              = filebase64("${path.root}/../../${var.script_name}")
+  vpc_security_group_ids = [var.asg_sg_id]
+  user_data              = filebase64("${path.root}/install-apache.sh")
 }
 
 # Attach the autoscaling group to the target group of the ALB

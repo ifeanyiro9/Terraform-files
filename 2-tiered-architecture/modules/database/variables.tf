@@ -5,7 +5,7 @@
 #Database Subnet Group
 #####################################
 variable "db_sub_name" {
-  default = "Two tier db subnet group"
+  default = "two tier db subnet group"
   type    = string
 }
 
