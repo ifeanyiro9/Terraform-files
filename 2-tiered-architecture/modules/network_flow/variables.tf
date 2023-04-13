@@ -125,11 +125,11 @@ variable "nat_gw_name" {
 #####################################
 variable "alb_sg_name" {
   type    = string
-  default = "Two_tier_alb_sg"
+  default = "two tier alb_sg"
 }
 
 variable "alb_gw_tag_name" {
-  default = "Two Tier NAT Gateway"
+  default = "two tier nat_gateway"
   type    = string
 }
 
@@ -138,10 +138,10 @@ variable "alb_gw_tag_name" {
 #####################################
 variable "asg_sg_name" {
   type    = string
-  default = "Two Tier alb_sg"
+  default = "two tier asg_sg"
 }
 
 variable "db_sg_name" {
   type    = string
-  default = "Two Tier db_sg"
+  default = "two tier db_sg"
 }

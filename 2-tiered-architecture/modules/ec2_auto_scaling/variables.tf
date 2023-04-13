@@ -26,7 +26,7 @@ variable "pub_sub1_id" {}
 variable "pub_sub2_id" {}
 
 variable "asg_tag_name" {
-  default = "two Tier ASG"
+  default = "two tier asg"
   type    = string
 }
 
