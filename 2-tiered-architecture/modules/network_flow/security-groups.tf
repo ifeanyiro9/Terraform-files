@@ -1,12 +1,12 @@
 # Create security group for ALB
-resource "aws_security_group" "alb-sg" {
+resource "aws_security_group" "alb_sg" {
   # Set name and description of the security group
   name        = var.alb_sg_name
   description = "Allow HTTP traffic"
 
   # Set the VPC ID where the security group will be created
-  vpc_id     = aws_vpc.two-tier-vpc.id
-  depends_on = [aws_vpc.two-tier-vpc]
+  vpc_id     = aws_vpc.two_tier_vpc.id
+  depends_on = [aws_vpc.two_tier_vpc]
 
   # Inbound Rule
   # HTTP access from anywhere
@@ -29,15 +29,15 @@ resource "aws_security_group" "alb-sg" {
 
   # Set tags for the security group
   tags = {
-    Name = var.alb-gw-tag-name
+    Name = var.alb_gw_tag_name
   }
 }
 
 
-# Create Security Group for Auto-Scaling Group
-resource "aws_security_group" "asg-sg" {
+# Create Security Group for Auto_Scaling Group
+resource "aws_security_group" "asg_sg" {
   name   = var.asg_sg_name
-  vpc_id = aws_vpc.two-tier-vpc.id
+  vpc_id = aws_vpc.two_tier_vpc.id
 
   # Inbound Rules
   # Allow HTTP Access from ALB Security Group
@@ -45,15 +45,15 @@ resource "aws_security_group" "asg-sg" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.alb-sg.id]
+    security_groups = [aws_security_group.alb_sg.id]
   }
 
   # Allow SSH Access to public facing ASG
   ingress {
-    from_port       = 22
-    to_port         = 22
-    protocol        = "tcp"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   # Outbound Rules
@@ -68,23 +68,23 @@ resource "aws_security_group" "asg-sg" {
 
 # Create Security group for database tier
 resource "aws_security_group" "db_sg" {
-  name        = var.db_sg_name
-  vpc_id      = aws_vpc.two-tier-vpc.id
- 
+  name   = var.db_sg_name
+  vpc_id = aws_vpc.two_tier_vpc.id
+
   # Inbound Rules
   # Allow Access from Web Tier
   ingress {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    security_groups = [aws_security_group.asg-sg.id]
+    security_groups = [aws_security_group.asg_sg.id]
   }
 
   ingress {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    security_groups = [aws_security_group.asg-sg.id]
+    security_groups = [aws_security_group.asg_sg.id]
   }
 
   egress {
@@ -93,3 +93,5 @@ resource "aws_security_group" "db_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+}

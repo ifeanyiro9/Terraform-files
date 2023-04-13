@@ -1,12 +1,12 @@
 #####################################
 #VPC Variables
 #####################################
-variable "vpc-cidr" {
+variable "vpc_cidr" {
   default = "10.0.0.0/16"
   type    = string
 }
 
-variable "vpc-instance-tenancy" {
+variable "vpc_instance_tenancy" {
   default = "default"
   type    = string
 }
@@ -39,27 +39,27 @@ variable "priv_sub2_cidr" {
   type    = string
 }
 
-variable "map-public-ip" {
-    default = "true"
-    type    = bool
+variable "map_public_ip" {
+  default = "true"
+  type    = bool
 }
 
-variable "pub-sub1-name" {
+variable "pub_sub1_name" {
   default = "Two Tier Public Subnet 1"
   type    = string
 }
 
-variable "pub-sub2-name" {
+variable "pub_sub2_name" {
   default = "Two Tier Public Subnet 2"
   type    = string
 }
 
-variable "priv-sub1-name" {
+variable "priv_sub1_name" {
   default = "Two Tier Private Subnet 1"
   type    = string
 }
 
-variable "priv-sub2-name" {
+variable "priv_sub2_name" {
   default = "Two Tier Private Subnet 2"
   type    = string
 }
@@ -67,13 +67,13 @@ variable "priv-sub2-name" {
 #####################################
 #Availability Zone Variables
 #####################################
-variable "az-1" {
-  default = "us-east-1a"
+variable "az_1" {
+  default = "us_east_1a"
   type    = string
 }
 
-variable "az-2" {
-  default = "us-east-1b"
+variable "az_2" {
+  default = "us_east_1b"
   type    = string
 }
 
@@ -92,12 +92,12 @@ variable "priv_rt_cidr" {
   default     = "0.0.0.0/0"
 }
 
-variable "pub-rt-name" {
+variable "pub_rt_name" {
   default = "Two Tier Public Route Table"
   type    = string
 }
 
-variable "priv-rt-name" {
+variable "priv_rt_name" {
   default = "Two Tier Private Route Table"
   type    = string
 }
@@ -105,12 +105,12 @@ variable "priv-rt-name" {
 #####################################
 #Gateway Variables
 #####################################
-variable "igw-name" {
+variable "igw_name" {
   default = "Two Tier Internet Gatway"
   type    = string
 }
 
-variable "nat-gw-name" {
+variable "nat_gw_name" {
   default = "Two Tier NAT Gateway"
   type    = string
 }
@@ -119,11 +119,11 @@ variable "nat-gw-name" {
 #Application Load Balancer Variables
 #####################################
 variable "alb_sg_name" {
-  type        = string
-  default     = "Two-tier-alb-sg"
+  type    = string
+  default = "Two_tier_alb_sg"
 }
 
-variable "alb-gw-tag-name" {
+variable "alb_gw_tag_name" {
   default = "Two Tier NAT Gateway"
   type    = string
 }
@@ -132,11 +132,11 @@ variable "alb-gw-tag-name" {
 #ASG & Database Security Group Variables
 #####################################
 variable "asg_sg_name" {
-  type        = string
-  default     = "Two Tier alb-sg"
+  type    = string
+  default = "Two Tier alb_sg"
 }
 
 variable "db_sg_name" {
-  type        = string
-  default     = "Two Tier db-sg"
+  type    = string
+  default = "Two Tier db_sg"
 }

@@ -4,50 +4,50 @@
 
 #Database Subnet Group
 #####################################
-variable "db-sub-name" {
+variable "db_sub_name" {
   default = "Two tier db subnet group"
   type    = string
 }
 
-variable "pub-sub1-id" {}
-variable "pub-sub2-id" {}
+variable "pub_sub1_id" {}
+variable "pub_sub2_id" {}
 
 #Database
 #####################################
-variable "allocated-storage" {
-    type = number
+variable "allocated_storage" {
+  type = number
 }
 
-variable "storage-type" {}
+variable "storage_type" {}
 variable "engine" {}
 
-variable "engine-version" {
-    type = number
+variable "engine_version" {
+  type = number
 }
-variable "instance-class" {}
-variable "vpc-security-group-ids" {}
-variable "parameter-group-name" {}
-variable "db-name" {}
-variable "db-name" {}
+variable "instance_class" {}
+variable "vpc_security_group_ids" {}
+variable "parameter_group_name" {}
+variable "db_name" {}
+variable "username" {}
 variable "password" {}
 
-variable "allow-major-version-upgrade" {
-    type = bool
+variable "allow_major_version_upgrade" {
+  type = bool
 }
-variable "auto-minor-version-upgrade" {
-    type = bool
+variable "auto_minor_version_upgrade" {
+  type = bool
 }
-variable "backup-retention-period" {
-    type = number
+variable "backup_retention_period" {
+  type = number
 }
-variable "backup-window" {}
-variable "maintenance-window" {}
+variable "backup_window" {}
+variable "maintenance_window" {}
 
-variable "multi-az" {
-    type = bool
+variable "multi_az" {
+  type = bool
 }
-variable "skip-final-snapshot" {
-    type = bool
+variable "skip_final_snapshot" {
+  type = bool
 }
 
 

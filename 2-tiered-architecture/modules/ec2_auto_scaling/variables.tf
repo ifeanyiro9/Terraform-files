@@ -1,59 +1,61 @@
 #####################################
 #Auto Scaling Group Variables
 #####################################
-variable "asg-name" {
+variable "asg_name" {
   default = "Two tier asg"
   type    = string
 }
 
-variable "asg-min" {
-  type        = number
-  default     = 2
+variable "asg_min" {
+  type    = number
+  default = 2
 }
 
-variable "asg-max" {
-  type        = number
-  default     = 5
+variable "asg_max" {
+  type    = number
+  default = 5
 }
 
-variable "asg-des-cap" {
+variable "asg_des_cap" {
   type        = number
   description = "ASG Desired Capacity"
   default     = 2
 }
 
-variable "pub-sub1-id" {}
-variable "pub-sub2-id" {}
+variable "pub_sub1_id" {}
+variable "pub_sub2_id" {}
 
-variable "asg-tag-name" {
+variable "asg_tag_name" {
   default = "Two Tier ASG"
   type    = string
 }
 
 #Launch Template
-variable "lt-asg-name" {
-  default = "Two tier lt-asg"
+variable "lt_asg_name" {
+  default = "Two tier lt_asg"
   type    = string
 }
 
-variable "lt-asg-ami" {
+variable "lt_asg_ami" {
   type        = string
   description = "Amazon Linux 2 Ami ID"
   default     = "ami-04581fbf744a7d11f"
 }
 
-variable "lt-asg-instance-type" {
-  type        = string
-  default     = "t2.micro"
+variable "lt_asg_instance_type" {
+  type    = string
+  default = "t2.micro"
 }
 
-variable "lt-asg-key" {
+variable "lt_asg_key" {
   type        = string
   description = "Key Pair"
   default     = "levelupkeypair"
 }
 
-variable "script-name" {
+variable "asg_sg_id" {}
+
+variable "script_name" {
   type        = string
   description = "User Data Script"
   default     = "install-apache.sh"
