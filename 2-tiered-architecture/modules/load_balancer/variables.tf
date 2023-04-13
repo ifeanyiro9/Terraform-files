@@ -1,11 +1,17 @@
 #####################################
 #Load Balancer Variables
 #####################################
+variable "pub_sub_alb_name" {
+  default = "Two tier public subnet"
+  type    = string
+}
+
+
 variable "pub_sub1_id" {}
 variable "pub_sub2_id" {}
 variable "alb_sg_id" {}
 
-variable "pub_sub_alb_name" {
+variable "pub_sub_alb_tag" {
   default = "Two Tier Public Subnet ALB"
   type    = string
 }

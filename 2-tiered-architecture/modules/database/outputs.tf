@@ -2,14 +2,14 @@
 # Outputs
 ################################
 
-#Db Subnet Group
+#DB Subnet Group
 ################################
 output "db_subnet_group_id" {
-  value = aws_autoscaling_group.db_subnet.id
+  value = aws_db_subnet_group.db_subnet.id
 }
 
 output "db_subnet_group_arn" {
-  value = aws_autoscaling_group.db_subnet.arn
+  value = aws_db_subnet_group.db_subnet.arn
 }
 
 #DB Instance

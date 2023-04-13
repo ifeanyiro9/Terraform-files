@@ -1,4 +1,4 @@
-# Outputs
+# Outputs Load Balancer
 ################################
 output "alb_dns" {
   value = aws_lb.pub_sub_alb.dns_name

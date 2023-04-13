@@ -1,11 +1,11 @@
 # Create a new load balancer
 resource "aws_lb" "pub_sub_alb" {
-  name            = var.load_balancer_name
+  name            = var.pub_sub_alb_name
   subnets         = [var.pub_sub1_id, var.pub_sub2_id]
-  security_groups = [var.alb_sg.id]
+  security_groups = [var.alb_sg_id]
 
   tags = {
-    Name = var.pub_sub_alb_name
+    Name = var.pub_sub_alb_tag
   }
 }
 

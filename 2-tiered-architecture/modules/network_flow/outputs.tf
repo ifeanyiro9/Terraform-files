@@ -22,23 +22,11 @@ output "priv_sub2_id" {
   value = aws_subnet.priv_sub2.id
 }
 
-output "priv_sub2_id"
-  value = aws_subnet.priv_sub2.id
-}
-
-output "priv_sub2_id" {
-  value = aws_subnet.priv_sub2.id
-}
-
 ################################
 #Gateway Outputs
 ################################
 output "two_tier_igw_id" {
   value = aws_internet_gateway.two_tier_igw.id
-}
-
-output "alb_dns_name" {
-  value = aws_lb.pub_sub_alb.dns_name
 }
 
 ################################
