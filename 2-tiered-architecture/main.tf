@@ -60,7 +60,7 @@ module "database" {
   parameter_group_name        = "default.mysql5.7"
   username                    = "two_tier_db"
   db_name                     = "admin"
-  password                    = "password"
+  password                    = var.db_password
   allow_major_version_upgrade = true
   auto_minor_version_upgrade  = true
   backup_retention_period     = 35
