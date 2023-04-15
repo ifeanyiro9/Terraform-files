@@ -7,8 +7,5 @@ variable "pm_vpc_cidr" {
   type    = string
 }
 
-variable "db_password" {
-  type      = string
-  default   = "password"
-  sensitive = true
-}
+variable "db_username" {}
+variable "db_password" {}

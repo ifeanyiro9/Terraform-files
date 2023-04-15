@@ -59,7 +59,7 @@ module "database" {
   vpc_security_group_ids      = module.network_flow.db_sg_id
   parameter_group_name        = "default.mysql5.7"
   username                    = "two_tier_db"
-  db_name                     = "admin"
+  db_name                     = var.db_username
   password                    = var.db_password
   allow_major_version_upgrade = true
   auto_minor_version_upgrade  = true
